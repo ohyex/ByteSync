@@ -15,13 +15,11 @@ namespace WebDavFileProviderExtension
         }
 
 
-        string INSFileProviderItem.Identifier => Identifier;
-        string INSFileProviderItem.ParentIdentifier => NSFileProviderItemIdentifier.RootContainer;
-        string INSFileProviderItem.Filename => Identifier;
-
-        string INSFileProviderItem.TypeIdentifier => Identifier == NSFileProviderItemIdentifier.RootContainer
+        string INSFileProviderItem.Identifier => Identifier == NSFileProviderItemIdentifier.RootContainer
             ? UTTypes.Folder.ToString()
             : UTTypes.PlainText.ToString();
+        string INSFileProviderItem.ParentIdentifier => NSFileProviderItemIdentifier.RootContainer;
+        string INSFileProviderItem.Filename => Identifier;
     }
 }
 

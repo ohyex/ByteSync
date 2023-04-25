@@ -18,6 +18,7 @@ namespace ByteSync
                 }
                 else
                 {
+                    Console.WriteLine("Got {0} domains", domains.Length);
                     foreach (var domain in domains)
                     {
                         Console.WriteLine("Get Domain: {0}", domain.Identifier);
@@ -33,6 +34,9 @@ namespace ByteSync
                 {
                     Console.WriteLine("Error removing domains: {0}", err);
                 }
+                else {
+                    Console.WriteLine("Successfully removed domains");
+                }
             });
 
             // Register domain
@@ -46,6 +50,9 @@ namespace ByteSync
                     if (err != null)
                     {
                         Console.WriteLine("Error adding domain: {0}", err);
+                    } else
+                    {
+                        Console.WriteLine("Successdully added domain");
                     }
                 });
             var manager = NSFileProviderManager.FromDomain(fileProviderDomain);
@@ -66,7 +73,10 @@ namespace ByteSync
         {
             NSFileProviderManager.RemoveAllDomains(err =>
             {
-                if (err != null) Console.WriteLine("Error removing domains: {0}", err);
+                if (err != null)
+                {
+                    Console.WriteLine("Error removing domains: {0}", err);
+                }
             });
         }
     }

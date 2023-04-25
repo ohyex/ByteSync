@@ -1,11 +1,10 @@
 ﻿using System;
-using Common;
 using FileProvider;
 using Foundation;
 
 namespace WebDavFileProviderExtension
 {
-    [Register("WebDavFileProviderExtension")]
+    [Register("FileProviderExtension")]
     public class FileProviderExtension : NSExtensionRequestHandling, INSFileProviderReplicatedExtension
     {
         [Export("initWithDomain:")]

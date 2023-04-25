@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using CoreFoundation;
 using Foundation;
 
-namespace Common
+namespace WebDavFileProviderExtension
 {
     public static class NSLogHelper
     {
